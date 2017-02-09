@@ -80,11 +80,20 @@ public class MainActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
-        tab.getTabAt(2);
+      
 
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+               if(tab.getPosition()==1){
+                    recyclerView.getLayoutManager().scrollToPosition(12);
+                }
+                else if(tab.getPosition()==2){
+                    recyclerView.getLayoutManager().scrollToPosition(24);
+                }
+                else{
+                    recyclerView.getLayoutManager().scrollToPosition(0);
+                }
 
             }
 
